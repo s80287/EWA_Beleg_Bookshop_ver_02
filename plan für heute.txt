@@ -1,0 +1,3 @@
+- Quantity Warenkorb -> Lagerbestand
+- Datenbank!! -> Login (wie Table?)
+- Adminbereich 

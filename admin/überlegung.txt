@@ -1,0 +1,5 @@
+Überlegung: 
+- Von Stripe fetchen -> Wie? 
+- Direkt in HTML laden -> Ging nicht
+
+Nach Einkauf geht Bestand nicht runter -> Warum?

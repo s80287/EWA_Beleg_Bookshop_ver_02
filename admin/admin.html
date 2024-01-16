@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Adminbereich Buchshop G19</title>
+  <style>
+    #app {
+      display: inline-block;
+      padding: 10px;
+      font-size: x-large;
+      background-color: rgb(251, 252, 251);
+    }
+  </style>
+
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Willkommen im Adminbereich!</title>
+	  </head>
+
+<body>
+
+<div id="app">
+  <h1 class="display-8">Adminbereich</h1>
+  <h2 class="display-8">{{ message }}</h2>
+	   	<h2>{{ timestamp }}</h2>  
+	<table class="table table-hover mt-3">
+			<thead class="thead-light">
+			<tr>
+				<th scope="col">ID</th>
+				<th scope="col">Titel</th>
+				<th scope="col">Autor</th>
+				<th scope="col">Preis</th>
+				<th scope="col">Lagerbestand</th>
+				<th scope="col"></th>
+			</tr>
+			</thead>
+			<tbody>
+				<tr v-for="(product, index) in products">
+				<th>{{ product.ProduktID }}</th>
+				<td>{{ product.Produkttitel }}</td>
+				<td>{{ product.Autorname }}</td>
+				<td>{{ product.PreisBrutto }}€</td>
+				<td>{{ product.Lagerbestand }}</td>
+				<td>
+					
+					<!--<button class="btn btn-outline-success ml-3" v-on:click=increase(index)>+</button>
+					<button class="btn btn-outline-danger" v-on:click=decrease(index)>-</button>
+					<button class="btn btn-light" v-on:click=setzero(index)>Set 0</button>
+					<span style="color:red" v-if="product.quantity == 0">Ausverkauft!</span>-->
+				<form action="update.php" method="post">
+					<input type="number" id="bookID" name="bookID" min="0" placeholder="Produkt ID"><br>
+					<input type="number" id="quantity" name="quantity" min="0" placeholder="Neuer Bestand"><br>
+					<button type="submit" class="btn btn-light" v-on:click=push(index)> Aktualisieren</button>
+				</form>
+					
+				</td>
+				</tr>
+				
+			</tbody>
+				
+
+		</table>
+		<h3> Bestellungen: </h3>
+		<form action="orders.php" method="post">
+			<button type="submit" class="btn btn-light" v-on:click=push(index)> Bestellungen laden</button>
+		</form>
+</div>
+<!-- <script src="vue.global.js"></script> -->
+ <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> 
+
+<script src="admin_v3.js"></script>
+
+
+</body>
+</html>

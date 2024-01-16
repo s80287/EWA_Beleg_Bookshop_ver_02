@@ -1,0 +1,19 @@
+{ 
+  "products": [
+                { "id":  "1",
+                  "quantity":"2",
+                  "name":"AFK-Book",
+				  "author":"Max Mustermax"
+                },
+		{             "id":  "2",
+                  "quantity":"3",
+                  "name":"JavaScript",
+				  "author":"Meine Mutter"
+                },
+		{             "id":  "3",
+                  "quantity":"3",
+                  "name":"VueJs 3",
+				  "author":"Meine Mutter Max"
+                }
+             ]
+}
